@@ -18,11 +18,5 @@ Thumbs.db
 .vscode/
 .idea/
 
-# Ignore Large Test Images (if not necessary)
-groove_finder_test_images/
-*.png
-*.jpg
-*.webp
-
 # Ignore Debugging & Temp Files
 *.tmp
