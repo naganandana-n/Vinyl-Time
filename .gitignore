@@ -1,0 +1,28 @@
+# Ignore Python Virtual Environments
+venv/
+.env
+.venv/
+env/
+__pycache__/
+
+# Ignore System Files
+.DS_Store
+Thumbs.db
+
+# Ignore Compiled & Log Files
+*.pyc
+*.pyo
+*.log
+
+# Ignore IDE/Editor-Specific Files
+.vscode/
+.idea/
+
+# Ignore Large Test Images (if not necessary)
+groove_finder_test_images/
+*.png
+*.jpg
+*.webp
+
+# Ignore Debugging & Temp Files
+*.tmp
