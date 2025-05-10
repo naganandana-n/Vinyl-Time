@@ -20,3 +20,5 @@ Thumbs.db
 
 # Ignore Debugging & Temp Files
 *.tmp
+fallback/acrcloud_scan_files_python3/config.yaml
+
