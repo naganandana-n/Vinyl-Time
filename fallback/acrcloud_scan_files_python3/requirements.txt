@@ -1,0 +1,11 @@
+retrying
+click
+python-dateutil
+tqdm
+fuzzywuzzy
+ffmpeg-python
+PyYAML
+urllib3
+scipy
+numpy
+sounddevice
