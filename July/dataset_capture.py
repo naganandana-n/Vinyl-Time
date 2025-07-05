@@ -3,15 +3,19 @@ import time
 import cv2
 from picamera2 import Picamera2
 
+# ✅ Directory to save images
+SAVE_DIR = os.path.join(os.path.dirname(__file__), "raw_dataset")
+os.makedirs(SAVE_DIR, exist_ok=True)
+
 # Setup: resolution 640x480
 picam = Picamera2()
 picam.configure(picam.create_still_configuration(main={"format": "RGB888", "size": (640, 480)}))
 picam.start()
 
-# Get the next available image number
+# Get the next available image number in the save directory
 def get_next_image_number():
     i = 1
-    while os.path.exists(f"image{i}.jpg"):
+    while os.path.exists(os.path.join(SAVE_DIR, f"image{i}.jpg")):
         i += 1
     return i
 
@@ -23,7 +27,7 @@ try:
         key = input("Press 0 to take photo: ")
         if key == '0':
             frame = picam.capture_array()
-            filename = f"image{img_count}.jpg"
+            filename = os.path.join(SAVE_DIR, f"image{img_count}.jpg")
             cv2.imwrite(filename, frame)
             print(f" Saved {filename}")
             cv2.imshow("Captured Photo", frame)
