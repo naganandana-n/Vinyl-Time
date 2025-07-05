@@ -19,21 +19,20 @@ def get_next_image_number():
         i += 1
     return i
 
-print(" Press '0' in terminal to take a photo. Ctrl+C to exit.")
+print(" Press Enter in terminal to take a photo. Ctrl+C to exit.")
 img_count = get_next_image_number()
 
 try:
     while True:
-        key = input("Press 0 to take photo: ")
-        if key == '0':
-            frame = picam.capture_array()
-            filename = os.path.join(SAVE_DIR, f"image{img_count}.jpg")
-            cv2.imwrite(filename, frame)
-            print(f" Saved {filename}")
-            cv2.imshow("Captured Photo", frame)
-            cv2.waitKey(3000)  # Show for 3 seconds
-            cv2.destroyAllWindows()
-            img_count += 1
+        key = input("Press Enter to take photo: ")
+        frame = picam.capture_array()
+        filename = os.path.join(SAVE_DIR, f"image{img_count}.jpg")
+        cv2.imwrite(filename, frame)
+        print(f" Saved {filename}")
+        cv2.imshow("Captured Photo", frame)
+        cv2.waitKey(3000)  # Show for 3 seconds
+        cv2.destroyAllWindows()
+        img_count += 1
 except KeyboardInterrupt:
     print("\n Exiting.")
     picam.close()
