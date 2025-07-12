@@ -22,3 +22,5 @@ Thumbs.db
 *.tmp
 fallback/acrcloud_scan_files_python3/config.yaml
 
+# Ignore config.yaml - audio-approach dir
+audio-approach/config.yaml
